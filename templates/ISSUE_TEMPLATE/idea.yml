@@ -1,0 +1,61 @@
+name: Idea
+description: A rough idea to evaluate later.
+title: "[Idea] "
+labels: ["intake:idea", "triage"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Idea
+      description: What could be better, in a sentence or two.
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Why
+      description: What prompted it and what it would save.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Settings
+        - Hooks
+        - Skills
+        - Agents
+        - MCP
+        - Permissions
+        - CLAUDE.md / AGENTS.md
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: implementation_model
+    attributes:
+      label: Suggested implementation model
+      description: Sonnet for simple, well-scoped changes. Opus for complex design or cross-cutting work.
+      options:
+        - Sonnet
+        - Opus
+        - Unsure
+  - type: dropdown
+    id: source
+    attributes:
+      label: Source
+      description: Who raised this.
+      options:
+        - Manual
+        - Session analysis (automated)
+    validations:
+      required: true
+  - type: input
+    id: sessions
+    attributes:
+      label: Session IDs
+      description: Sessions where this was observed, comma separated.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Transcript quotes that justify this. Redact secrets and private data.

@@ -1,0 +1,36 @@
+{
+  "issue_types": [
+    {"name":"Theme","description":"Strategic objective with an owner, measurable outcomes, and review date.","color":"PURPLE"},
+    {"name":"Initiative","description":"Deliberate business investment grouping epics and validating benefits.","color":"BLUE"},
+    {"name":"Epic","description":"Deliberate delivery umbrella grouping stories, bugs, and tasks.","color":"PURPLE"},
+    {"name":"Story","description":"User-facing capability with acceptance criteria.","color":"GREEN"},
+    {"name":"Bug","description":"Incorrect behavior with expected behavior and reproduction evidence.","color":"RED"},
+    {"name":"Task","description":"A scoped piece of work with completion criteria.","color":"YELLOW"},
+    {"name":"SubTask","description":"Implementation step linked to a Story, Bug, or Task.","color":"GRAY"}
+  ],
+  "fields": [
+    {"name":"Status","options":["Backlog","To Do","In Progress","In Review","Done"]},
+    {"name":"Theme Status","options":["Proposed","Strategy Review","Approved","Active","Outcome Review","Closed"]},
+    {"name":"Initiative Status","options":["Backlog","Business Case","Approved","In Progress","Benefits Validation","Done"]},
+    {"name":"Epic Status","options":["Backlog","In Progress","Ready for Release","Released"]},
+    {"name":"SubTask Status","options":["To Do","In Progress","Done"]},
+    {"name":"Priority","options":["P0 - Critical","P1 - High","P2 - Medium","P3 - Low"]}
+  ],
+  "views": [
+    {"name":"All work","filter":"","column":"Status"},
+    {"name":"Themes","filter":"type:Theme","column":"Theme Status"},
+    {"name":"Initiatives","filter":"type:Initiative","column":"Initiative Status"},
+    {"name":"Epics","filter":"type:Epic","column":"Epic Status"},
+    {"name":"Work","filter":"type:Bug,Story,Task","column":"Status"}
+  ],
+  "card_fields": ["Title","Assignees","Parent issue","Sub-issues progress","Priority"],
+  "intake_labels": ["intake:idea","intake:feature","intake:bug","intake:automation","triage"],
+  "area_labels": ["area:quality","area:engineering","area:security","area:privacy","area:finance","area:legal"],
+  "delivery_types": ["Story","Bug","Task"],
+  "transitions": {
+    "To Do":["Backlog"],
+    "In Progress":["To Do","In Review"],
+    "In Review":["In Progress"],
+    "Done":["In Progress","In Review"]
+  }
+}

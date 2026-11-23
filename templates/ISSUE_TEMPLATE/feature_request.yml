@@ -1,0 +1,71 @@
+name: Feature request
+description: A concrete capability to add.
+title: "[Feature] "
+labels: ["intake:feature", "triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is missing or painful today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Done when
+      description: Observable acceptance criteria.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Settings
+        - Hooks
+        - Skills
+        - Agents
+        - MCP
+        - Permissions
+        - CLAUDE.md / AGENTS.md
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: implementation_model
+    attributes:
+      label: Suggested implementation model
+      description: Sonnet for simple, well-scoped changes. Opus for complex design or cross-cutting work.
+      options:
+        - Sonnet
+        - Opus
+        - Unsure
+  - type: dropdown
+    id: source
+    attributes:
+      label: Source
+      description: Who raised this.
+      options:
+        - Manual
+        - Session analysis (automated)
+    validations:
+      required: true
+  - type: input
+    id: sessions
+    attributes:
+      label: Session IDs
+      description: Sessions where this was observed, comma separated.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Transcript quotes that justify this. Redact secrets and private data.
